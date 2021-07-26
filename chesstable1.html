@@ -60,7 +60,8 @@
             //fill with squares by class attribute; switch between 1 and 0 to assign alternate dark and light class to the 'td'.
                 assign = nos % 2; //use 1 or 0 to switch between light and dark
                 let classcolor = (assign ==0) ? "dark" : "light";
-                square.setAttribute("class", classcolor); 
+                square.setAttribute("class", classcolor)
+                square.setAttribute( "draggable", "true" );
                 console.log(classcolor);
 
               //label each square with positonal notation
