@@ -3,7 +3,7 @@
 <head>
   <title>Setting up the board using JS</title>
 
-    <link rel="stylesheet" href="4-Player-Team-Chess/4-PlayerTeamChess.css">
+    <link rel="stylesheet" href="./4-PlayerTeamChess.css">
 
 </head>
 <body>
@@ -59,7 +59,7 @@
                
             //fill with squares by class attribute; switch between 1 and 0 to assign alternate dark and light class to the 'td'.
                 assign = nos % 2; //use 1 or 0 to switch between light and dark
-                let classcolor = (assign ==1) ? "dark" : "light";
+                let classcolor = (assign ==0) ? "dark" : "light";
                 square.setAttribute("class", classcolor); 
                 console.log(classcolor);
 
@@ -84,6 +84,11 @@
     // Append table to document
     document.getElementById( 'ChessBoard' ).appendChild( table );
 
+
+    // document.getElementById('c12').innerHTML = "♜";
   </script>
+    <script src="./Populate Pieces.js"></script>
+    
+
 </body>
 </html>
