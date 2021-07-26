@@ -1,0 +1,89 @@
+<!--Solution-->
+<html>
+<head>
+  <title>Setting up the board using JS</title>
+
+    <link rel="stylesheet" href="4-Player-Team-Chess/4-PlayerTeamChess.css">
+
+</head>
+<body>
+    <h1>4-Player Team Chess : </h1>
+    <div id=Player1>"Player 1"</div>
+  <div id="ChessBoard"></div>
+  <script>
+
+    // Create table
+    const table = document.createElement( 'table' );
+    table.setAttribute("class", "chess-board"); 
+      const letters = ['. ','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l'];
+      // const numbers = [ 12, 11, 10, 9, 8, 7, 6, 5,4,3,2,1];
+
+
+    // Create headers
+    {
+      const row = document.createElement( 'tr' );
+      letters.forEach( l => {
+        const letter = document.createElement( 'th' );
+        letter.appendChild( document.createTextNode( l ) );
+        row.appendChild( letter );
+      } );
+      table.appendChild( row );
+    }
+
+    // Create td square for each th
+         
+         { let numbers = [ 12, 11, 10, 9, 8, 7, 6, 5,4,3,2,1];
+
+          for ( i =0; i < numbers.length; i++) {
+            x=0; //this is used to index the letters for square notation
+            //creates the new row
+                const row1 = document.createElement( 'tr' );
+                
+            //populate with number labels on left hand side of board
+                {let num = [ 12, 11, 10, 9, 8, 7, 6, 5,4,3,2,1];
+                no = document.createTextNode( num[i] );
+                row1.appendChild(no);
+              }
+
+
+            //sort numbers array in reverse on alternate rows conditions to alternate square colors
+                oddEven = i % 2;  //initiate math logic usig modulo operator
+                if (oddEven == 0) { 
+                numbers.sort(function(a, b){return a-b});
+                                  } else {numbers.reverse();
+                                         }
+            
+            //fills the row horizontally with td
+                numbers.forEach ( nos => {
+                let square = document.createElement( "td");
+               
+            //fill with squares by class attribute; switch between 1 and 0 to assign alternate dark and light class to the 'td'.
+                assign = nos % 2; //use 1 or 0 to switch between light and dark
+                let classcolor = (assign ==1) ? "dark" : "light";
+                square.setAttribute("class", classcolor); 
+                console.log(classcolor);
+
+              //label each square with positonal notation
+                let lettr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l'];
+                
+              //  console.log("x  : " + x);  
+                  let num = [ 12, 11, 10, 9, 8, 7, 6, 5,4,3,2,1];
+                  let no = num[i] ;
+                  let position = `${lettr[x]}${no}`;
+                  x++;          
+    
+                square.setAttribute("id", position); 
+                console.log("This square is  : " + position); 
+                // console.log("next x  : " + x);                          
+                 row1.appendChild(square);
+                table.appendChild( row1 );          
+                                      }                   
+                            ) 
+            };
+           };
+    // Append table to document
+    document.getElementById( 'ChessBoard' ).appendChild( table );
+
+  </script>
+</body>
+</html>

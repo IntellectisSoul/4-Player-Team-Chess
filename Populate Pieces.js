@@ -1,0 +1,3 @@
+td.getElementbyID
+
+apendChild(♜)

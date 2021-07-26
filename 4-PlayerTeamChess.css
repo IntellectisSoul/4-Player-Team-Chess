@@ -1,0 +1,25 @@
+.chess-board { border-spacing: 0; border-collapse: collapse; }
+.chess-board th { padding: .15em; }
+/* .chess-board th + th { border-bottom: 5px solid #000; } */
+/* .chess-board th:first-child,
+/* .chess-board td:last-child { border-right: 5px solid #000; } */
+/* .chess-board tr:last-child td { border-bottom: 5px solid; } */ */
+
+.chess-board th:empty { border: none; }
+
+.chess-board td   { width: 1.3em; height: 1.3em; text-align: center; font-size: 32px; line-height: 0; }
+
+.chess-board td:hover {background-color: greenyellow;}
+.chess-board .light { background: #eee; }
+.chess-board .dark { background: #aaa; }
+.chess-board .dead { background: rgb(24, 23, 23); }
+
+
+
+
+
+#a12, #b12, #a11, #b11, #k12, #l12, #k11, #l11, #a1, #b1, #a2, #b2, #k1, #l1, #k2, #l2 {background-color: black;
+}
+table, th, td {
+    border: .3px solid black;    
+  }
