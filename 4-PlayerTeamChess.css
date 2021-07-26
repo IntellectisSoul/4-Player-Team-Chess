@@ -19,5 +19,57 @@
 #a12, #b12, #a11, #b11, #k12, #l12, #k11, #l11, #a1, #b1, #a2, #b2, #k1, #l1, #k2, #l2 {background-color: black;
 }
 table, th, td {
-    border: .3px solid black;    
-  }
+    border: .3px solid black;}
+
+/* table {
+
+      margin-left:100px; 
+      margin-right:auto;
+      
+    } */
+    /* //table reset and illusion of table nudge */
+    /* table, caption, tbody, tfoot, thead, tr, th, td {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    } */
+
+
+.left {width: 150px;
+  text-align : center;
+font-family: Verdana;
+font-weight: 600;
+vertical-align: middle;}
+
+
+.middle {width: 550px;
+  text-align : center;
+font-family: Verdana;
+font-weight: 600 ;
+padding-bottom: 5px;
+padding-top: 5px;
+}
+
+.right {width: 150px;
+  text-align : center;
+font-family: Verdana;
+font-weight: 600;
+vertical-align: middle;}
+/* #Player3  {
+  float: left;
+}
+
+#ChessBoard {
+  float: center ;
+}
+
+#Player4 {
+  float: right;
+} */

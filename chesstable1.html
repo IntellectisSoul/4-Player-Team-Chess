@@ -9,8 +9,27 @@
 <body>
     <h1>2 vs. 2 Team Chess || 
       4 vs.  4 Individual Game : </h1>
-    <div id=Player1>"Player 1"</div>
-  <div id="ChessBoard"></div>
+
+
+  <section style="display: table;">
+    <div class = "left"  style="display: table-cell;"></div>
+    <div class = "middle" id="Player2" style="display: table-cell;">"Player 2"</div>
+    <div class = "right" style="display: table-cell;"></div>
+  </section>
+
+  <section style="display: table;">
+    <div class = "left" id = "Player3" style="display: table-cell;">"Player 3"</div>
+    <div class = "middle" style="display: table-cell;" id="ChessBoard"></div> 
+    <div class = "right" id = "Player4" style="display: table-cell;">"Player 4"</div>
+  </section> 
+  <section style="display: table;">
+    <div class = "left"  style="display: table-cell;"></div>
+    <div class = "middle" id=Player1 style="display: table-cell;">"Player 1"</div>
+    <div class = "right" style="display: table-cell;"></div>
+   </section>
+
+
+
   <script>
 
     // Create table
@@ -26,6 +45,7 @@
       letters.forEach( l => {
         const letter = document.createElement( 'th' );
         letter.appendChild( document.createTextNode( l ) );
+        letter.setAttribute("vertical-align", "middle");  //check for right code
         row.appendChild( letter );
       } );
       table.appendChild( row );
@@ -61,7 +81,7 @@
             //fill with squares by class attribute; switch between 1 and 0 to assign alternate dark and light class to the 'td'.
                 assign = nos % 2; //use 1 or 0 to switch between light and dark
                 let classcolor = (assign ==0) ? "dark" : "light";
-                square.setAttribute("class", classcolor)
+                square.setAttribute("class", classcolor);
                 square.setAttribute( "draggable", "true" );
                 console.log(classcolor);
 
