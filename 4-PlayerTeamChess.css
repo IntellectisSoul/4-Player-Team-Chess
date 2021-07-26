@@ -21,12 +21,8 @@
 table, th, td {
     border: .3px solid black;}
 
-/* table {
 
-      margin-left:100px; 
-      margin-right:auto;
-      
-    } */
+
     /* //table reset and illusion of table nudge */
     /* table, caption, tbody, tfoot, thead, tr, th, td {
       margin: 0;
@@ -40,7 +36,14 @@ table, th, td {
       border-collapse: collapse;
       border-spacing: 0;
     } */
-
+.header {
+text-align : center;
+font-family: fantasy;
+font-size: 17px;
+font-weight: 1000 ;
+padding-bottom: 5px;
+padding-top: 5px;
+}
 
 .left {width: 150px;
   text-align : center;
