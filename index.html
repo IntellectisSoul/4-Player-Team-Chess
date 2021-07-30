@@ -1,0 +1,116 @@
+<!--Solution-->
+<html>
+<head>
+  <title>Setting up the board using JS</title>
+
+    <link rel="stylesheet" href="./4-PlayerTeamChess.css">
+
+</head>
+<body>
+    <h1> </h1>
+
+<div class = "header"  style="display: table-header-group">2 vs. 2 Team Chess || 4 vs.  4 Individual Game :</div>
+  <section style="display: table;">
+    
+    <div class = "left"  style="display: table-cell;"></div>
+    <div class = "middle" id="Player2" style="display: table-cell;">"Player 2"</div>
+    <div class = "right" style="display: table-cell;"></div>
+  </section>
+
+  <section style="display: table;">
+    <div class = "left" id = "Player3" style="display: table-cell;">"Player 3"</div>
+    <div class = "middle" style="display: table-cell;" id="ChessBoard"></div> 
+    <div class = "right" id = "Player4" style="display: table-cell;">"Player 4"</div>
+  </section> 
+  <section style="display: table;">
+    <div class = "left"  style="display: table-cell;"></div>
+    <div class = "middle" id=Player1 style="display: table-cell;">"Player 1"</div>
+    <div class = "right" style="display: table-cell;"></div>
+   </section>
+
+
+
+  <script>
+
+    // Create table
+    const table = document.createElement( 'table' );
+    table.setAttribute("class", "chess-board"); 
+      const letters = ['. ','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l'];
+      // const numbers = [ 12, 11, 10, 9, 8, 7, 6, 5,4,3,2,1];
+
+
+    // Create headers
+    {
+      const row = document.createElement( 'tr' );
+      letters.forEach( l => {
+        const letter = document.createElement( 'th' );
+        letter.appendChild( document.createTextNode( l ) );
+        letter.setAttribute("vertical-align", "middle");  //check for right code
+        row.appendChild( letter );
+      } );
+      table.appendChild( row );
+    }
+
+    // Create td square for each th
+         
+         { let numbers = [ 12, 11, 10, 9, 8, 7, 6, 5,4,3,2,1];
+
+          for ( i =0; i < numbers.length; i++) {
+            x=0; //this is used to index the letters for square notation
+            //creates the new row
+                const row1 = document.createElement( 'tr' );
+                
+            //populate with number labels on left hand side of board
+                {let num = [ 12, 11, 10, 9, 8, 7, 6, 5,4,3,2,1];
+                no = document.createTextNode( num[i] );
+                row1.appendChild(no);
+              }
+
+
+            //sort numbers array in reverse on alternate rows conditions to alternate square colors
+                oddEven = i % 2;  //initiate math logic usig modulo operator
+                if (oddEven == 0) { 
+                numbers.sort(function(a, b){return a-b});
+                                  } else {numbers.reverse();
+                                         }
+            
+            //fills the row horizontally with td
+                numbers.forEach ( nos => {
+                let square = document.createElement( "td");
+               
+            //fill with squares by class attribute; switch between 1 and 0 to assign alternate dark and light class to the 'td'.
+                assign = nos % 2; //use 1 or 0 to switch between light and dark
+                let classcolor = (assign ==0) ? "dark" : "light";
+                square.setAttribute("class", classcolor);
+                square.setAttribute( "draggable", "true" );
+                console.log(classcolor);
+
+              //label each square with positonal notation
+                let lettr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l'];
+                
+              //  console.log("x  : " + x);  
+                  let num = [ 12, 11, 10, 9, 8, 7, 6, 5,4,3,2,1];
+                  let no = num[i] ;
+                  let position = `${lettr[x]}${no}`;
+                  x++;          
+    
+                square.setAttribute("id", position); 
+                console.log("This square is  : " + position); 
+                // console.log("next x  : " + x);                          
+                 row1.appendChild(square);
+                table.appendChild( row1 );          
+                                      }                   
+                            ) 
+            };
+           };
+    // Append table to document
+    document.getElementById( 'ChessBoard' ).appendChild( table );
+
+
+    // document.getElementById('c12').innerHTML = "♜";
+  </script>
+    <script src="./Populate Pieces.js"></script>
+    
+
+</body>
+</html>
